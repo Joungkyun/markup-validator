@@ -5,5 +5,5 @@
         - update revision <a href="https://github.com/w3c/markup-validator/tree/531eb3e">@531eb3e</a>
         - update NU to <a href="https://github.com/validator/validator/releases/tag/18.11.5">18.11.5</a> for HTML5 validator
         - Translation a little more ..
-        - <a href="./patches/check-1.4-accept-lang.patch">support i18N functions</a> for korean template
+        - <a href="https://github.com/KLDP-ORG/markup-validator/commit/21b2a30dcb8444c875e4c2ba7ccf77cb9b0710ed">support i18N functions</a> for korean template
 </div>
