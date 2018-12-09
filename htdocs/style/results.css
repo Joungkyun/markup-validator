@@ -5,6 +5,9 @@
    See http://www.w3.org/Consortium/Legal/ipr-notice.html#Copyright
 */
 
+@import url(//cdn.kldp.org/fonts/css/nanumbarungothicweb.css);
+@import url(//cdn.kldp.org/fonts/css/d2coding.css);
+
 #results_container {
 	margin: 2em;
 }
@@ -52,7 +55,7 @@
 .input {
 	color: black;
 	background-color: #eaebee;
-	font-family: "Bitstream Vera Sans Mono", monospace;
+	font-family: "D2Coding", "D2 coding", "Bitstream Vera Sans Mono", monospace;
 	font-size: small;
 }
 
@@ -324,7 +327,7 @@ code.input strong {
 */
 
 #source ol {
-	font-family: "Bitstream Vera Sans Mono", monospace;
+	font-family: "D2Coding", "D2 coding", "Bitstream Vera Sans Mono", monospace;
 	font-size: smaller;
 	background: #eaebee;
 	border: 1px solid black;
@@ -345,7 +348,7 @@ code.input strong {
 }
 
 pre.source {
-	font-family: "Bitstream Vera Sans Mono", monospace;
+	font-family: "D2Coding", "D2 coding", "Bitstream Vera Sans Mono", monospace;
 	border: 1px solid black;
 	background: #eaebee;
 	margin: 1em;
@@ -414,7 +417,7 @@ h2.invalid,
 h2.tentative_valid {
 	text-align: center;
 	margin: 0;
-	font-family: "Bitstream Vera Sans", sans-serif;
+	font-family: "D2Coding", "D2 coding", "Bitstream Vera Sans", sans-serif;
 	font-size: 1.3em;
 	font-weight: 500;
 	font-style: normal;

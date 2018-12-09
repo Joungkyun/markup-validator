@@ -5,6 +5,10 @@
    See http://www.w3.org/Consortium/Legal/ipr-notice.html#Copyright
 */
 
+@import url(//cdn.kldp.org/fonts/css/nanumbarungothicweb.css);
+@import url(//cdn.kldp.org/fonts/Free/Tlab/css/gyeonggititle.css);
+@import url(//cdn.kldp.org/fonts/css/d2coding.css);
+
 /* @group Reset */
 
 html,
@@ -35,7 +39,7 @@ strong {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 100%;
-	font-family: Helvetica, Arial, Sans-Serif;
+	font-family: "나눔바른고딕", "Nanum Barun Gothic Web", Helvetica, Arial, Sans-Serif;
 	vertical-align: baseline;
 	background-color: white;
 	color: #1f2126;
@@ -86,7 +90,7 @@ body {
 }
 
 p {
-	line-height: 130%;
+	line-height: 150%;
 }
 
 strong {
@@ -95,14 +99,14 @@ strong {
 
 h2 {
 	color: #690;
-	font-family: Verdana, Arial, sans-serif;
+	font-family: "GyeonggiTitle", Verdana, Arial, sans-serif;
 	background-color: white;
 	font-size: 1.3em;
 	margin-bottom: 1em;
 }
 
 h3 {
-	font-family: Verdana, Arial, sans-serif;
+	font-family: "GyeonggiTitle", Verdana, Arial, sans-serif;
 	color: #690;
 	background-color: white;
 	font-size: 1.1em;
@@ -113,7 +117,7 @@ h3 {
 }
 
 h4 {
-	font-family: Verdana, Arial, sans-serif;
+	font-family: "GyeonggiTitle", Verdana, Arial, sans-serif;
 	color: #690;
 	font-style: italic;
 	text-decoration: none;
@@ -125,7 +129,7 @@ h4 {
 
 h5,
 h6 {
-	font-family: Verdana, Arial, sans-serif;
+	font-family: "GyeonggiTitle", Verdana, Arial, sans-serif;
 	color: #690;
 	background-color: white;
 	font-weight: normal;
@@ -156,7 +160,7 @@ th {
 #keywords,
 #short_desc,
 textarea {
-	font-family: Monaco, "Courier New", Monospace;
+	font-family: "D2Coding", "D2 coding", Monaco, "Courier New", Monospace;
 	font-size: 0.9em;
 	border-top: 1px solid #777;
 	border-right: 1px solid #bbb;
@@ -292,7 +296,7 @@ tr.subchoice th label {
 /* @group Header */
 
 #title {
-	font-family: "Myriad Web", "Myriad Pro", "Gill Sans", Helvetica, Arial, Sans-Serif;
+	font-family: "GyeonggiTitle", "Myriad Web", "Myriad Pro", "Gill Sans", Helvetica, Arial, Sans-Serif;
 	background-color: inherit;
 	color: #fdfdfd;
 	font-size: 1.6em;
@@ -343,7 +347,7 @@ h1 span {
 	margin: -2em 0 0 12.1em;
 	padding-bottom: 1em;
 	letter-spacing: 0.1em;
-	line-height: 100% !important;
+	line-height: 150% !important;
 	color: #d0dcee;
 	background-color: transparent;
 }
@@ -691,7 +695,7 @@ div.doc ol {
 	list-style-type: decimal;
 }
 div.doc #toc ol li {
-	line-height: 130%;
+	line-height: 150%;
 	font-weight: bold;
 }
 div.doc #toc ol li ol {
@@ -740,7 +744,7 @@ div.doc code {
 	padding-left: .2em;
 	padding-right: .2em;
 	color: black;
-	font-family: Monaco, "Courier New", monospace;
+	font-family: "D2Coding", "D2 coding", Monaco, "Courier New", monospace;
 	border: 1px dotted #ccc;
 }
 
@@ -833,10 +837,12 @@ div.intro p {
 
 /* warning on the home page for test instances */
 #test_warning {
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	line-height: 160%;
-	text-align: center;
+	border-top: 1px dotted #ccc;
+	padding-top: 20px;
+	//border-left: 1px solid #ccc;
+	//border-right: 1px solid #ccc;
+	line-height: 150%;
+	//text-align: center;
 	margin-top: 2em;
 	margin-left: 12%;
 	margin-right: 12%;
