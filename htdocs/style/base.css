@@ -5,7 +5,7 @@
    See http://www.w3.org/Consortium/Legal/ipr-notice.html#Copyright
 */
 
-@import url(//cdn.kldp.org/fonts/css/nanumbarungothicweb.css);
+@import url(//cdn.kldp.org/fonts/css/nanumgothic.css);
 @import url(//cdn.kldp.org/fonts/Free/Tlab/css/gyeonggititle.css);
 @import url(//cdn.kldp.org/fonts/css/d2coding.css);
 
@@ -39,7 +39,7 @@ strong {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 100%;
-	font-family: "나눔바른고딕", "Nanum Barun Gothic Web", Helvetica, Arial, Sans-Serif;
+	font-family: "나눔고딕", "Nanum Gothic", Helvetica, Arial, Sans-Serif;
 	vertical-align: baseline;
 	background-color: white;
 	color: #1f2126;
