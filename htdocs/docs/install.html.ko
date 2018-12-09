@@ -1,0 +1,423 @@
+<!--#set var="title" value="Installation Documentation for The W3C Markup Validation Service"
+--><!--#set var="relroot" value="../"
+--><!--#include virtual="../header.html" -->
+
+<div class="doc">
+  <h2>Installation information <br />for the W3C Markup Validator</h2>
+<!--#include virtual="../htmlchecker.html" -->
+  <p>
+    이 문서는 W3C Markup Validator 와 동일한 소스를 기반으로 설치 및 서비스를 하기
+    위한 정보를 제공합니다:
+  </p>
+
+    <div id="toc">
+      <ul>
+            <li><a href="#install-package">패키지 시스템을 이용한 설치</a></li>
+            <li><a href="#install-fromsource">소스 설치</a> (일반적인 경우)
+	     <ul>
+			<li><a href="#install-prereq">0 단계: 사전 준비</a></li>
+			<li><a href="#install-prereq-sp">1 단계: OpenSP, SGML (and XML) parser 설치</a></li>
+			<li><a href="#install-prereq-perl">2 단계: 필요한 Perl Modules 설치</a></li>
+			<li><a href="#install-download">3 단계: validator 와 DTDs 다운로드</a></li>
+			<li><a href="#install-components">4 단계: validator 풀기</a></li>
+			<li><a href="#install-configure">5 단계: Validator 설정</a></li>
+			<li><a href="#configure-apache">6 단계: Web server 설정</a></li>
+			<li><a href="#install-check">7 단계: 설치 확인</a></li>
+	     </ul>
+	    </li>
+            <li><a href="#install-troubleshoot">설치 문제점</a></li>
+	    <li><a href="#post-install">설치 후 옵션</a></li>
+            <li><a href="#credits">공헌과 감사</a></li>
+      </ul>
+    </div>
+
+
+    <div id="install" class="stb">
+    <a id="skip"> </a>
+
+    <p>우리가 여기서 제공하는 설치 문서는 거의 모든 시스템에서 작업을 할 수 있습니다.
+    하지만 다음의 리스트들은 특정 플랫폼에 따른 가이드를 제공하며, 흥미를 가질만 합니다:</p>
+    <ul>
+		<li>Roger Johansson의 <a href="http://www.456bereastreet.com/archive/201105/installing_the_w3c_markup_validator_on_mac_os_x/">Mac OS X and OS X Server</a></li>
+        <li>David Tibbe의 <a href="install_win.html">Windows</a></li>
+        <li>Nick Talbott의 <a href="http://lists.w3.org/Archives/Public/www-validator/2003Dec/0023.html">Linux (Slackware)</a></li>
+    </ul>
+    <h4>관련 문서</h4>
+    <p>이 설치 가이드는 Markup Validator 의 <a href="../source/">소스코드</a>에 대한 설명서입니다.</p>
+    <p>Markup Validator 에 공헌 또는 수정을 원하는 <a href="devel.html">개발자</a>라면, 이 시스템에
+    익숙해 질 수 있도록 이 설치 절차를 진행해 보기를 권장합니다.</p>
+
+
+    <h3 id="install-package">패키지 시스템상의 설치</h3>
+
+    <p>Markup Validator 의 릴리즈 버전을 설치하기 위하 가장 쉬운 방법은 공헌자들에 의하여 특정 플랫폼을
+    위해 만들어진 패키지를 이용하는 것입니다: Mac OS X, openSUSE/SUSE Linux, Debian GNU/Linux, Fedora/Red Hat을
+    위한 패키지는 <a href="../source/">여기</a>에서 받을 수 있습니다.</p>
+
+
+    <h3 id="install-fromsource">소스 설치 (일반적인 경우)</h3>
+    <p>이 문서는 Nic Talbott 의 슬랙웨어 리눅스 가이드를 참조하였습니다. 고맙습니다. Nick!</p>
+
+	<p>설치 가이드는 당신이 운영중인 웹서버를 가지고 있다고 가정을 합니다. 우리는
+    W3C Validation 서비스를 위해서 대중적인 아파치 웹서버를 사용할 것을 권장합니다.
+    validator 가 apache 보다 다른 서버에서 더 작동을 잘 할지는 모르겠지만, 우리는
+    다른 웹서버에서 발생할 일에 대해서는 보장을 할 수 없습니다. 또한 (모든 웹서버에
+    거의 설치가 되어 있겠지만..) Perl 언어 설치 작업이 필요할 수도 있습니다.</p>
+
+    <h4 id="install-prereq">Step 0: 전제 조건</h4>
+    <p>
+       웹서버의 설정은 기본이며 Validator 를 위해서는 - 모든 작업을 제대로 하기 위한 - SGML 파서가
+       필요 합니다. "check" CGI 스크립트를 작동하기 위해서는 펄 (5.8.0 이상) 과 여러가지 펄 모듈들이
+       필요합니다.
+     </p>
+	<p>
+	   다음의 몇 단계는 validator 설치와 필요한 사전 준비를 도와 줍니다.</p>
+
+    <h4 id="install-prereq-sp">1 단계: install OpenSP, SGML (과 XML) parser 설치</h4>
+     <p>
+       SGML 파서는 현재 <code>OpenSP 1.5.2</code>를 사용하고 있으며, <a
+           href="http://sourceforge.net/projects/openjade/">OpenJade 홈페이지</a>에서 받을 수 있습니다.
+       <em>OpenSP 1.5.2 이전 버전으로는 Validator를 작동 하려고 시도하지 마십시오.</em> 작동하지 않습니다.
+     </p>
+
+     <p><code>역주: 오래전 배포본에는 OpenSP 가 openjade 패키지에 포함이 되어 있는 경우가 있습니다.
+     W3C HTML validator 0.8 부터는 OpenSP 1.5.2가 필요하기 때문에 openjade 패키지에 포함이 되어
+     있을 경우에는 OpenSP 를 다른 경로에 따로 설치 하시기 바랍니다. RHEL/CentOS 에서는 Fedora의
+     OpenSP source rpm 을 리빌드하여 설치 하십시오.</code></p>
+
+	 <p>소스 설치를 한다면, DTDs 검색을 위해 HTTP를 활성화 하고 문서 생성을 비활성화 합니다.</p>
+	 <p>다음의 명령을 root/administrator 권한 또는 sudo를 이용해서 실행 하십시오.</p>
+	 <pre>
+[unpack opensp]
+./configure --enable-http --disable-doc-build
+make
+make install
+</pre>
+
+      <h4  id="install-prereq-perl">2 단계: 필요한 Perl Modules 설치</h4>
+	  <h5>빠르고 간단하게: CPAN bundle 설치</h5>
+     <p>
+       쉬운 방법으로는 - 강력하게 권고하는 방법 - 의존성이 걸린 이 모든 펄 모듈들을 포함하고
+       있는 <a href="http://search.cpan.org/dist/Bundle-W3C-Validator/">Bundle-W3C-Validator</a>
+       을 CPAN 에서 설치하는 것입니다. 이 번들에 대한 자세한 사항은
+       <a href="http://search.cpan.org/dist/Bundle-W3C-Validator/lib/Bundle/W3C/Validator.pm">여기</a>를
+       참조 하십시오.
+     </p>
+	<p>root/administrator 또는 sudo 명령을 이용하여 실행 합니다.</p>
+	<pre>
+perl -MCPAN -e shell
+[cpan shell starts, you may need to answer configuration questions]
+install Bundle::W3C::Validator
+</pre>
+
+     <h5>For reference: 필요한 Perl module 패키지 리스트</h5>
+     <p><strong>위의 번들을 성공적으로 설치했다면 이 과정은 넘어가십시오.</strong>.</p>
+
+	 <p>다음은 Markup Validator를 실행하는데 필요한 펄 모듈입니다. <a href="#install-prereq-perl">CPAN instructions</a>를
+	 사용한다면, 이 리스트들을 개별적으로 설치할 필요가 없습니다.</p>
+
+      <dl>
+        <dt><a href="http://search.cpan.org/dist/CGI.pm/">CGI.pm</a> &gt;= 3.40</dt>
+        <dd>
+          The all-singing, all-dancing,
+          everything-<em>and</em>-the-kitchen-sink, Perl CGI library. This
+          takes care of all those niggly little bits of CGI for us and make
+          options parsing and file upload a breeze.
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/Config-General/">Config-General</a> &gt;= 2.32</dt>
+        <dd>
+          설정 파일을 처리합니다.
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/Encode/">Encode</a> 와
+            <a href="http://search.cpan.org/dist/Encode-HanExtra/">Encode-HanExtra</a></dt>
+        <dd>
+          여러가지 언어 인코딩을 지원
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/HTML-Parser/">HTML-Parser</a> &gt;= 3.60</dt>
+        <dd>
+          비교에 사용이 되고, 메타데이터를 찾아내는 작은 HTML 파서
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/HTML-Encoding/">HTML-Encoding</a></dt>
+        <dd>
+            Determine the encoding of HTML/XML/XHTML documents. 
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/HTML-Template/">HTML-Template</a> &gt;= 2.6</dt>
+        <dd>
+          Validator 의 로직과 표현을 분리하도록 해 주는 템플릿 시스템
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/JSON/">JSON</a> &gt;= 2.00</dt>
+        <dd>
+          JSON 출력 지원.
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/libwww-perl/">libwww-perl</a> &gt;= 5.802</dt>
+        <dd>
+          Gisle Aas' most excellent WWW library for Perl. This is where our
+          support for downloading pages off the net comes from.  Version 5.802
+          or newer is required, however we strongly suggest a (much) newer
+          version.  Validator's support for compressed responses is announced
+          using the <code>Accept-Encoding</code> HTTP header with version 5.816
+          and later, depending on if the modules required for libwww-perl's
+          compression facilities are installed.  If you want your Validator to
+          support <abbr title="Secure Sockets Layer">SSL</abbr>/<abbr
+          title="Transport Layer Security">TLS</abbr>, see
+          <a href="http://search.cpan.org/dist/libwww-perl/README.SSL">README.SSL</a>
+          included in the libwww-perl distribution.
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/Net-IP/">Net-IP</a></dt>
+        <dd>
+          IP address manipulation.
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/SGML-Parser-OpenSP/">SGML-Parser-OpenSP</a> &gt;= 0.991</dt>
+        <dd>
+          Interface to the <a href="#install-prereq-sp">OpenSP parser</a>.
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/URI/">URI</a> &gt;= 1.53</dt>
+        <dd>
+          Library to handle URIs and escaping special characters in them.
+        </dd>
+        <dt><a href="http://search.cpan.org/dist/XML-LibXML/">XML-LibXML</a> &gt;= 1.73</dt>
+        <dd>
+          The Perl binding for <a href="http://xmlsoft.org/">libxml2</a>, used
+          to check the syntax of XML-based document types.  In addition to the
+          version requirement, XML-LibXML needs to be built with support for
+          libxml2 structured errors, i.e. libxml2 &gt;= 2.6.21.
+        </dd>
+      </dl>
+
+     <h6>For reference: 부가적인 Perl module 패키지 리스트</h6>
+
+      <p>
+        다음의 펄 모듈들은 옵션입니다; validator는 이 모듈들을 사용한 경우, 몇몇 특수 기능에서
+        사용하게 됩니다.
+      </p>
+
+      <dl>
+        <dt><a href="http://search.cpan.org/dist/Encode-JIS2K/">Encode-JIS2K</a></dt>
+        <dd>
+          Support for additional Japanese character encodings.
+        </dd>
+      </dl>
+
+      <dl>
+        <dt><a href="http://search.cpan.org/dist/HTML-Tidy/">HTML-Tidy</a></dt>
+        <dd>
+          HTML-Tidy는 제출된 markup을 표준에 맞게 재작성하기 위하여 사용을
+          합니다.
+        </dd>
+      </dl>
+
+    <h4 id="install-download">3단계: validator 와 DTDs 다운로드</h4>
+        <p>Validator 코드, 설정, DTD 라이브러리는 <a href="https://github.com/w3c/markup-validator/"
+        >Github 저장소</a>의 master branch 에서 받을 수 있습니다.
+
+    <h4 id="install-components">4단계: validator 풀기</h4>
+        <ol>
+            <li><p>validator 를 설치할 디렉토리를 생성합니다. Unix 기반의 시스템에서의기본값은
+            <code>/usr/local/markup-validator</code> 입니다. 이 디렉토리는 이 가이드상에서
+            <code>[validatorpath]</code> 로 업급이 될 것입니다. </p></li>
+
+            <li>
+              <p><code>cd /usr/local ; git clone https://github.com/w3c/markup-validator.git</code></p>
+              <p>
+                <code>[validatorpath]</code> 디렉토리에는 이제 <code>cgi-bin</code>, <code>htdocs</code>,
+                <code>share</code> 라는 3개의 서브디렉토리가 존재하게 됩니다.
+              </p>
+            </li>
+        </ol>
+
+    <h4 id="install-configure">5 단계: Validator 설정</h4>
+	    <ol>
+	        <li>
+	          <p>
+	            <code>/etc/w3c</code> 디렉토리를 생성한 후, <code>[validatorpath]/htdocs/config/</code>의
+	            모든 파일을 복사 합니다. 설정 파일을 다른 곳에 위치 시켰다면, 설정 파일이 있는 디렉토리를
+	            웹서버 환경 변수를 수정하여 지정해 주도록 합니다. 지겨울 수 있겠지만, 우리는
+	            <code>/etc/w3c</code>를 사용하는 것을 권장 합니다.
+	          </p>
+	        </li>
+	        <li>
+	          <p>
+	            설치된 파일들을 반영하고, 원하는 다른 파라미터들을 설정하기 위하여
+	            <code>/etc/w3c/validator.conf</code>를 수정 합니다. 이 파일은
+	            주석이 잘 되어 있으며, 상당히 직관적으로 수정할 수 있습니다.
+			   </p><p>일반적으로, validator 파일이 풀어져 있는 곳이 Base path에 잘 설정이
+			    있는지 확인할 필요가 있습니다. <code>/usr/local/validator</code>를
+			    사용하고 있다면 따로 변경할 필요는 없습니다.
+	          </p>
+<pre>
+Base = /usr/local/validator
+</pre>
+			<p>사설 네트워크에서 문서를 validate할 계획이 있다면 <code>validator.conf</code> 파일의
+				다음 옵션을 활성화 해야 합니다:</p>
+<pre>
+Allow Private IPs = yes
+</pre>
+
+	        </li>
+	        <li><p>(외부 그리고 실험적인) HTML5 검사기로 문서를 검사하기를 원한다면, 
+	            <a href="http://about.validator.nu/">validator.nu</a> 엔진을 설치하고,
+	            validator.conf 파일에 다음의 설정을 하십시오:</p>
+<pre>
+&lt;External&gt;
+## Enable checking documents via external services
+HTML5 = http://localhost:8888/html5/   
+&lt;/External&gt;    
+</pre></li>
+			<li><p>웹서버에 추가하기 전에 validator 스크립트를 테스트 할 수 있습니다:</p>
+<pre>
+# cd /usr/local/validator/
+# cd cgi-bin/
+# ./check uri=http://www.w3.org/
+…
+</pre>
+<p>스크립트는 validation 의 원시 HTML 결과를 출력합니다. 제대로 작동하지 않는다면
+	상단의 단계들이 정확하게 이루어 졌는지 다시 확인해 보도록 합니다.</p>
+</li>
+	    </ol>
+	     <h5>For reference: 설정 파일 리스트</h5>
+	     <p><strong>validator의 기본 행동을 수정할 계획이 없다면, 이 부분을 건너 뛰기 바랍니다.</strong>.</p>
+			  <dl>
+		        <dt>validator.conf</dt>
+		        <dd>
+		          validator의 <strong>메인 설정 파일</strong>입니다. 이 파일은 일반적으로 유일하게 편집을 해야할
+		          파일일 것입니다. 이 파일은 메인테이너의 주소, 여러가지 파일 경로및 위치,
+		          <a href="api.html">API</a>의 활성화 여부와 같은 여러가지 파라미터들을 설정합니다.
+		        </dd>
+		        <dt>charset.cfg</dt>
+		        <dd>
+		          validator 의 내부 UTF-8 변환을 위한 변환 매개 변수를 설정한 캐릭터 맵입니다.
+		        </dd>
+		        <dt>types.conf</dt>
+		        <dd>
+		          다른 방법으로 HTML, XML, XHTML을 다루기 위한 내부 "문서 형식"에 대한 MIME/HTTP
+		          Content-Type 맵 입니다.
+		        </dd>
+		       </dl>
+
+
+	<h4 id="configure-apache">6 단계: Web server 설정</h4>
+	<p>다음의 아파치 웹서버의 소개입니다. 만약 다른 서버를 이용할 계획이라면 알아서 하셔야 합니다.</p>
+        <ol>
+            <li>
+              <p>Apache 서버를 사용한다면, mod_perl2를 이용하여 validator를 구동할 수 있습니다.
+                 validator나 다른 유사한것으로 부터 배포되는 단편적인 httpd.conf를 사용할 경우,
+                 그리고 mod_perl2가 설치되어 있다면 자동으로 작동을 하게 됩니다.
+                 mod_perl2를 사용하면 성능에서 상당한 이득을 볼 수 있습니다. 하지만, 넓게 테스트 되지는
+                 않았습니다. mod_perl을 이용하여 validator를 잘 구동하고 있거나, 또는 문제가 있다면
+                 개발자에게 <a href="../feedback.html">피드백</a>을 주시기 바랍니다.</p>
+
+              <p>또한, Apache의 mod_expire를 사용하면, validator의 정적인 문서, 스타일 시트, 이미지를 캐싱하도록 할 수 있습니다.</p>
+            </li>
+            <li>
+              <p>
+                validator 를 위한 특정 설정 파일을 언급하기 위하여 웹서버의 설정 파일을
+                수정 합니다. <code>역주: 말이 상당히 어렵습니다. 간단히 웹서버 설정을 한다는 의미입니다.</code>
+              </p>
+              <p>
+                아파치 웹서버의 httpd.conf 에 <code>httpd/conf/httpd.conf</code> 파일에 있는
+                내용을 추가합니다. 또는 웹서버
+                설정파일 httpd.conf 의 마지막 라인에 다음의 내용을 추가합니다:
+              </p>
+              <pre>Include /where/you/copied/it/httpd.conf</pre>
+              <p>
+                다음 validator 특정 부분의 편집을 시작 합니다.
+              </p>
+            </li>
+
+            <li><p>서비스를 위해서 "가상 서버"를 설정을 해야 합니다. 이것은 아래과 같이 비슷하게
+            추가하는 것으로 가능합니다:</p>
+<pre>&lt;VirtualHost 127.0.0.1&gt;
+	DocumentRoot [validatorpath]/htdocs/
+	ServerName validator.example.org
+&lt;/VirtualHost&gt;</pre>
+            <p><strong>그리고/또는</strong> 웹서버의 특정 위치에 서비스를 지정하고 싶을 경우,
+            다음과 같이 설정할 수 있습니다: </p>
+            <pre>Alias /validator/ [validatorpath]/htdocs/</pre>
+            </li>
+
+            <li><p>Configure environment variables affective validator's outside connectivity
+            if needed (such as <code>http_proxy</code>), see examples in the supplied <code>httpd.conf</code>
+            and <a href="http://search.cpan.org/dist/libwww-perl/lib/LWP.pm#ENVIRONMENT">LWP</a>
+            and <a href="http://search.cpan.org/dist/libnet/Net/FTP.pm#CONSTRUCTOR">Net::FTP</a>
+            documentation.</p></li>
+
+            <li><p>Finish editing this HTTP server configuration file, adapting 
+            all the directory references to reflect the paths used in your installation.</p></li>
+
+            <li></p>
+            갱신된 설정을 반영하기 위해서 웹서버를 재시작 합니다.</p><p>아파치 웹서버 재시작은
+            쉘에서 시스템 관리자 권한으로 다음을 실행합니다:
+            <code>apachectl graceful</code> (또는 오래된 버전의 아파치에서는
+            <code>apachectl configtest</code> 후, <code>apachectl restart</code>)</p></li>
+       </ol>
+
+    <h4 id="install-check">7 단계: 설치 확인</h4>
+    <ol>
+        <li><p>설치된 사이트를 브라우저로 확인한다.</p></li> 
+        <li><p>서버 에러가 나오면, 무엇이 잘못 되었는지 확인하기 위하여 웹서버의 에러 로그를 확인한다.</p></li>
+   </ol>
+
+    <p><strong>Help us</strong> improve this installation guide by sending us your feedback
+    if you install the validator on your local system!</p>
+
+   <h3 id="install-troubleshoot">신규 설치 문제 해결</h3>
+   <p>It is not always easy to troubleshoot an incomplete, or failed, installation of
+   the Markup Validator. While the instructions given in this page should help most people
+   install the validator successfully on their system, bad luck, a forgotten step 
+    or a broken component can make things go sour.</p>
+
+   <h4>설치 단계를 한번 더 확인</h4>
+   <p>The first sound thing to do if the installation failed would be to check that you did not forget
+   any step while installing. properly copying and editing the configuration file is among the common
+   mistakes, for example.</p>
+
+   <h4>로그 확인</h4>
+   <p>The error logs for your Web server should be a good first place to look for hints on what
+   is wrong with your installation.</p>
+
+   <h4>의존성 확인</h4>
+   <p>A common problem with a newly installed validator is a validator that is apparently running
+   but marking anything as "invalid", without giving any error message as output.</p>
+
+  <p>This is somewhat typical of a problem with OpenSP. Cross-check that you actually have a version
+  above 1.5, by running <kbd>onsgmls --version</kbd>.</p>   
+
+
+   <h4>기적의 디버그 옵션</h4>
+   <p>If the validator is misbehaving, you can try forcing various debug options by appending to
+   the URL the following string: <kbd>&amp;debug=1</kbd></p>
+
+   <p>This can sometimes provide you with error messages that would not have appeared anywhere in
+   non-debug mode, and can be helpful to diagnose the problem</p>
+
+   <h4>If all fails...</h4>
+   <p>Don't hesitate to contact the public mailing-list www-validator@w3.org with all the details 
+  you can provide on what you did, tried, and what went wrong...</p>
+
+    <h3 id="post-install">설치 후 옵션</h3>
+   <p>if the installation succeeded, you should be able to now use the Markup Validator on your own
+   system and network. You may want to give the validator a look and feel specific to your Web site.
+   The easiest way to achieve this is to edit <code>header.html</code> and <code>footer.html</code>
+   (in the <code>htdocs</code> directory), the header and footer markup snippets used to build all 
+   pages for the validator.</p><p>  You may also edit the Style Sheets (in the same directory), 
+   especially <code>base.css</code> You may however want to avoid editing the other CSS files too 
+   heavily, there is a risk you could make the output of the validator unusable.</p>
+   <p>
+     If you edit any *.css or *.js files, make sure that you update the gzipped
+     versions of the edited files as well if they're installed and content
+     negotiation for them is enabled in your setup (both are usually true if
+     the validator was installed following these instructions).
+   </p>
+</div>
+
+    <div id="credits" class="stb">
+      <h3>공헌과 감사</h3>
+<p>The Validator Team wishes to thank Nick Talbott and Stephen Yoch for their help 
+in creating these installation instructions. Thanks also to all the people who 
+use and review the guide to make it better and better!</p>
+
+    </div>
+</div>
+<!--#include virtual="../footer.html" -->
+  </body>
+</html>

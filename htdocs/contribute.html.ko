@@ -1,0 +1,65 @@
+<!--#set var="title" value="How to Contribute to the W3C Markup Validator"
+--><!--#set var="relroot" value="./"
+--><!--#include virtual="header.html" -->
+
+<div class="doc"><a id="skip" name="skip"></a>
+<h2>공헌하는 방법</h2>
+
+<p>W3C Markup Validator는 W3C에서 관리하는 완전한 오픈 소스 프로젝트 입니다:
+더 좋게, 더 친숙하게, 더 강력한 소프트웨어가 될 수 있고, 영원히 무료로 유지 되도록
+도움을 줄 수 있는 많은 방법이 있습니다:</p>
+
+<ol>
+    <li>
+        <p id="support"><strong>다른 사람을 도와라</strong>. 훌륭한 공동체는 훌륭한
+        도구를 생산 합니다.</p> 
+        <p><em>해야 할 일</em>: 약간의 시간과 인내심이 필요 합니다. 질문과 문제 해결이
+            필요한 사람들을 도와주기 위하여 <a
+            href="http://lists.w3.org/Archives/Public/www-validator/">메일링
+            리스트</a>를 구독 하십시오.<br>
+            <em>당신이 얻을 수 있는 것</em>: 개발자에게 여유를 가질 수 있도록 함으로서
+            프로젝트에 도움을 주고, 다른 사람을 도와준다는 만족감을 가질 수 있습니다.
+            웹을 정말 잘 아는 현명한 사람들의 커뮤니티에 참여 하는 것을 권장 합니다.</p>
+    </li>
+    <li>
+        <p id="code"><strong>코드</strong>. 프로젝트를 도울 수있는 가장 좋은 방법은 소프트웨어
+        개발에 참여하는 것입니다.</p>
+        <p><em>얼마나 걸리는가</em>:
+        Perl 프로그래밍 언어에 대한 지식, <a
+        href="http://dvcs.w3.org/hg/markup-validator/file/tip/">유효성 검사기
+        코드베이스</a>에 익숙해 지려면 몇 시간 정도면 되지만, 프로젝트에 헌신하는 데는
+        많은 시간이 걸립니다.
+
+        시작에 대한 정보는 <a href="docs/devel.html">개발자 가이드</a>를 참조 하고, 또
+        <a href="http://www.w3.org/Bugs/Public/buglist.cgi?product=Validator&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED">알려진
+        버그 및 개선 요청</a>을 찾거나 <a href="todo.html">아키텍처 로드맵</a>을
+        살펴보십시오.
+
+        <br>
+
+        <em>당신이 얻을 수 있는 것</em>: 
+        가장 좋아하는 기능을 개발하거나 가장 싫어하는 버그를 우선 순위에 두도록 할 수있는 기회 ...
+        수백만 명의 유효성 검사기 사용자에 대한 감사와 존경.</p>
+    </li>
+    <li>
+        <p id="feeback"><strong>피드백</strong>. 당신의 아이디어가 중요합니다. 그리고 우리는
+        당신이 발견한 버그에 대해서 알고 싶습니다.</p>
+        <p><em>해야 할 일</em>: 우리의 <a href="feedback.html">피드백 페이지</a>를 방문 하십시오.<br>
+        <em>당신이 얻을 수 있는 것</em>:
+        자신만을 위하여 아이디어를 가지고 있는 것보다 버그/기능을 더 잘 다룰 수 있는 기회</p>
+    </li>
+    <li><p id="donate"><strong>돈</strong>. 유효성 검사기는 무료 입니다. 하지만 개발, 지원,
+    호스팅, 유지 관리 등에 많은 비용이 듭니다.</p>
+     <p><em>할 수 있는 일</em>: 관대한 마음으로 <a href="http://www.w3.org/QA/Tools/Donate">기부
+         페이지</a>로 신속히 방문.<br>
+         <em>당신이 얻을 수 있는 것</em>:
+         항상 사용하는 도구에 대한 지원 및 유효성 검사기의 진화에 대한
+         <a href="feedback.html">의견을 표시</a> 할 수있는 기회.</p>
+    </li>    
+</ol>        
+        
+
+</div>
+<!--#include virtual="footer.html" -->
+</body>
+</html>

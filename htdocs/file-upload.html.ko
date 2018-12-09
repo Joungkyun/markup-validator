@@ -1,0 +1,52 @@
+<!--#set var="title" value="W3C Markup Validation Service: Upload Files"
+--><!--#set var="relroot" value="./"
+--><!--#include virtual="header.html" -->
+
+
+<div id="frontforms">
+<h2>Validate Uploaded File</h2>
+
+<div id="fields">
+  <p><a id="skip" name="skip"></a>
+    이 폼은 사용자의 컴퓨터에 있는 파일을 업로드 하여 검사를 할 수 있도록 합니다.
+  </p>
+
+<div>
+      <fieldset class="tabset_content front"><legend>파일 업로드로 유효성 검사</legend>
+      <form method="post" enctype="multipart/form-data" action="check">
+      <p><label title="검사를 위해 업로드를 할 로컬 파일 선택" for="uploaded_file">파일:</label>
+        <input type="file" id="uploaded_file" name="uploaded_file" size="50" /></p>
+        <fieldset id="extra_opt_upload" class="moreoptions">
+                <legend class="toggletext">추가 옵션</legend>
+                <div class="options">
+             <!--#set var="fieldset_id" value="upload"-->
+             <!--#include virtual="detailed-form.html" -->
+          </div>
+        </fieldset><!-- invisible -->
+
+        <p class="submit_button">
+            <label title="이 파일을 검사">
+                <input type="submit" value="검사" />
+            </label>
+        </p>
+      </form>
+  <br />
+  <p><strong>주의</strong>: Windows XP SP2 의 몇몇 IE 에서는 업로드가
+  되지 않을수도 있습니다. 이 경우에는, W3C QA 사이트의
+  <a href="http://www.w3.org/QA/2005/01/Validator-IE_WinXP_SP2">information page</a>
+  를 참고 하십시오.</p>
+
+     </fieldset>
+    </div>
+
+   <p>
+    If your document is on the Web, you can validate it with the same advanced options
+    by <a title="Validate files by URL" href="detailed.html">entering its address</a> instead.
+  </p>
+
+</div>
+</div>
+
+  <!--#include virtual="footer.html" -->
+  </body>
+</html>

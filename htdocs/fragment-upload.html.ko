@@ -1,0 +1,47 @@
+<!--#set var="title" value="W3C Markup Validation Service: Validate by Direct Input"
+--><!--#set var="relroot" value="./"
+--><!--#include virtual="header.html" -->
+
+<div id="frontforms">
+<h2>Validate by Direct Input</h2>
+
+<div id="fields">
+
+  <p id="skip">
+    이 폼에서 <em>완전한</em> HTML 문서를 붙여넣기 하여 검사를 할 수 있습니다.
+  </p>
+
+  <div>
+    <form method="post" enctype="multipart/form-data" action="check">
+
+      <div class="options">
+      <table>
+      <!--#set var="fieldset_id" value="direct"-->
+      <!--#include virtual="detailed-form_directinput.html" -->
+      </table>
+      </div>
+
+      <textarea id="fragment" name="fragment" rows="12" cols="80"></textarea>
+
+      <p class="submit_button">
+      <label title="검사를 위한 확인"><input type="submit" value="검사" /></label>
+      <input type="reset" value="Reset this form" />
+      </p>
+
+    </form>
+  </div>
+
+  <br />
+
+  <p>
+    If your document is on the Web, you can validate
+    it by <a title="Validate files by URL" href="./">entering its address</a> instead.
+  </p>
+
+</div>
+</div>
+
+<!--#include virtual="footer.html" -->
+
+  </body>
+</html>

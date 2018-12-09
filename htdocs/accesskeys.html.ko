@@ -1,0 +1,32 @@
+<!--#set var="title" value="Accesskeys Legend For The W3C Markup Validation Service"
+--><!--#set var="relroot" value="./"
+--><!--#include virtual="header.html" -->
+<div class="doc">
+    <div id="skip" class="intro">
+      <p>
+        다음 accesskey들은 스크린 리더를 사용하는 사용자들을 돕기 위한 시도로서
+        사이트 전반적으로 향상시켜 줍니다. 이 키가 적용되지 않는 페이지를 발견한다면
+        <a href="feedback.html">Feedback</a> 페이지를 이용하여 우리에게 알려 주시면
+        감사하겠습니다.
+      </p>
+    </div>
+
+      <h2>Accesskey Legend</h2>
+        <ol>
+          <li><p>홈: access key "1"은 서비스 첫 페이지로 이동 합니다.</p></li>
+          <li><p>Skip Navigation: access key "2"...</p>
+            <ul>
+              <li>... 결과 페이지 에서, 실제 결과물의 처음으로 이동 합니다.</li>
+              <li>... 문서 페이지에서, 목차로 이동 합니다.</li>
+              <li>... 다른 문세에서 (첫 페이지, 고급 인터페이스 페이지), 첫번째 폼으로 이동 합니다.</li>
+            </ul>
+          </li>
+          <li><p>문서: access key "3"은 서비스의 문서 인덱스로 이동 합니다.</p></li>
+          <li><p>피드백: access key "4"는 피드백 소개로 이동 합니다.</p></li>
+        </ol>
+
+</div>
+<!--#include virtual="footer.html" -->
+  </body>
+</html>
+

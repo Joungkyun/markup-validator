@@ -1,0 +1,28 @@
+<div class="intro">
+    <p>
+        이 validator는 <a href="http://kldp.org">KLDP</a>에서 제공하는 W3C의 한국어 HTML Validation 서비스이며,
+        HTML, XHTML, SMIL, MathML 등 웹 문서의
+        <a href="docs/help.html#validation_basics" title="What is markup validation?">markup 유효성</a>을
+        검사합니다.
+        <a href="https://feedvalidator.kldp.org/" title="Feed validator, hosted at W3C">RSS/Atom 피드</a>,
+        <a href="https://css-validator.kldp.org/" title="W3C CSS Validation Service">CSS 스타일 시트</a>,
+        <a href="https://validator.w3.org/mobile/" title="MobileOK Checker">MobileOK 컨텐츠</a>,
+        또는 <a href="https://validator.kldp.org/checklink" title="W3C Link Checker">깨진 링크 찾기</a>와 같은
+        특정 컨텐츠를 검사하기를 원한다면, <a href="http://www.w3.org/QA/Tools/">다른 유효성 검사와 도구</a>
+        문서를 참고 하십시오. 또한, W3C의 <a href="https://validator.w3.org/nu">non-DTD-based validator</a>
+        또한 대안이 될 수 있습니다.
+    </p>
+</div>
+
+<div id="w3c-include"></div>
+
+<p id="test_warning"><img src="images/info_icons/warning.png" alt="Important" style="vertical-align: top;" />
+    <a href="http://kldp.org">KLDP</a> 서비스는 비공식 <a
+     href="https://validator.w3.org/source/">W3C Markup Validator software</a>의
+    한국어 번역 local copy 서비스로서, 최대한 한글 번역 서비스를 제공하려고 노력하고
+    있습니다만, 문서의 양이 너무 방대하고 번역에 참여하는 인원의 부족으로 인하여 100% 번역 제공을
+    해 드리고 있지는 못합니다. 혹시 번역이 되지 않은 문서를 번역하신 분은 oops(@)kldp.org 로 메일을
+	주시면 즉시, 반영해 드리도록 하겠습니다.<br /><br />
+
+    W3C의 공식 validation 서비스는 <a href="https://validator.w3.org/">validator.w3.org</a>에서 제공 됩니다.
+</p>

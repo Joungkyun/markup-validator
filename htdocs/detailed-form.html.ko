@@ -1,0 +1,40 @@
+<table>
+  <tr>
+    <th>
+      <label for="<!--#echo var="fieldset_id" -->-charset">문자셋</label>
+    </th>
+    <td>
+      <!--#include virtual="charset-select.html" -->
+    </td>
+    <td><input id="<!--#echo var="fieldset_id" -->-fbc" name="fbc" type="checkbox" value="1" /><label for="<!--#echo var="fieldset_id" -->-fbc" title="문서에 문자셋이 없을 경우에만 선택된 문자셋을 사용">지정되지 않았을 경우만 사용</label></td>
+  </tr>
+  <tr>
+    <th>
+        <label for="<!--#echo var="fieldset_id" -->-doctype">문서 형식</label>
+    </th>
+    <td>
+        <!--#include virtual="doctype-select.html" -->
+    </td>
+    <td><label for="<!--#echo var="fieldset_id" -->-fbd"><input id="<!--#echo var="fieldset_id" -->-fbd" name="fbd" type="checkbox" value="1" title="문서 형식이 지정되지 않았을 경우에만 선택된 문서 형식을 사용" />지정되지 않았을 경우만 사용</label></td>
+  </tr>
+  <tr>
+          <td colspan="3"><input type="radio" name="group" id="<!--#echo var="fieldset_id" -->group_no" value="0" checked="checked" /><label for="<!--#echo var="fieldset_id" -->group_no">연속된 메시지 리스트</label> <input type="radio" name="group" id="<!--#echo var="fieldset_id" -->group_yes" value="1" /><label for="<!--#echo var="fieldset_id" -->group_yes">형식별로 에러 메시지를 묶음</label></td>
+
+</tr>
+<tr>
+        <td><input id="<!--#echo var="fieldset_id" -->-ss" name="ss" type="checkbox" value="1" /><label title="페이지 소스 보기" for="<!--#echo var="fieldset_id" -->-ss">소스 보기</label></td>
+        <td colspan="2"><input id="<!--#echo var="fieldset_id" -->-st" name="st" type="checkbox" value="1" /><label for="<!--#echo var="fieldset_id" -->-st">HTML-Tidy로 소스 수정하기</label>
+        </td>
+        
+
+
+          </tr>
+          <tr>
+                  <td><input id="<!--#echo var="fieldset_id" -->-outline" name="outline" type="checkbox" value="1" /><label title="문서의 개요를 출력합니다." for="<!--#echo var="fieldset_id" -->-outline">개요 보기</label>
+                  </td>
+                  <td><input id="<!--#echo var="fieldset_id" -->-No200" name="No200" type="checkbox" value="1" /><label title="에러를 지시하는 HTTML 상태 코드에 대한 페이지 유효성 검사" for="<!--#echo var="fieldset_id" -->-No200">에러 페이지 유효성 검사</label></td>
+
+                  <td><input id="<!--#echo var="fieldset_id" -->-verbose" name="verbose" type="checkbox" value="1" /><label title="자세한 결과" for="<!--#echo var="fieldset_id" -->-verbose">자세한 결과</label></td>
+        </tr>
+</table>
+

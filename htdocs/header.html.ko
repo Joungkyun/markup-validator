@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <!--  f expr="$QUERY_STRING ~= /(^|[;&])debug(=[^0]?)?(\b|$)/"
+    --><!--  et var="debug" value="1" --><!--  ndif -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title><!--#echo var="title" --></title>
+    <link rel="help" href="mailto:www-validator@w3.org" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="start" href="<!--#echo var="relroot" -->" title="Home Page" />
+    <link rel="stylesheet" href="<!--#echo var="relroot" -->style/base" type="text/css" media="all" />
+    <meta name="keywords" content="HTML, HyperText Markup Language, Validation,
+      W3C Markup Validation Service" />
+    <meta name="description" content="STML 파서 기반의 쉽게 사용할 수 있는
+      W3C 의 HTML 검사 서비스" />
+    <!--#if expr="$feeds = 1" -->
+    <link rel="alternate" type="application/atom+xml" href="http://www.w3.org/QA/Tools/validator-whatsnew.atom" />
+    <!--#endif -->
+  </head>
+
+  <body>
+    <div id="banner">
+      <h1 id="title">
+        <a href="http://www.w3.org/">
+          <img alt="W3C" width="110" height="61" id="logo" src="<!--#echo var="relroot" -->images/w3c.png" />
+        </a>
+        <a href="<!--#echo var="relroot" -->"><span>Markup 검증 서비스</span></a>
+      </h1>
+      <p id="tagline">웹 문서의 마크업(HTML, XHTML, …)을 검사 하십시오</p>
+    </div>
+
+

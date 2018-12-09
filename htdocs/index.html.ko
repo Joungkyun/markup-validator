@@ -1,0 +1,103 @@
+<!--#set var="title" value="The W3C Markup Validation Service"
+--><!--#set var="relroot" value="./"
+--><!--#set var="feeds" value="1"
+--><!--#set var="includeJS" value="1"
+--><!--#include virtual="header.html" -->
+
+<div id="frontforms">
+	<ul id="tabset_tabs">
+		<li><a href="#validate-by-uri" onclick="focuson('uri'); return false;"><span>URI </span> 입력</a></li>
+		<li><a href="#validate-by-upload" onclick="return false;"><span>파일</span> 업로드</a></li>
+		<li><a href="#validate-by-input" onclick="focuson('fragment'); return false;"><span>직접</span> 입력</a></li>
+	</ul>
+<div id="fields">
+
+<fieldset id="validate-by-uri" class="tabset_content front"><legend class="tabset_label">URI 로 유효성 검사</legend>
+  <form method="get" action="check">
+    <p class="instructions">
+	온라인 문서 유효성 검사:     
+    </p>
+    <p>
+	<label title="유효성 검사를 위한 페이지 주소" for="uri">주소:</label>
+        <input type="text" name="uri" id="uri" size="45" autofocus placeholder="Enter a URL like http://domain.com/path/" />
+    </p>
+  <fieldset id="extra_opt_uri" class="moreoptions">
+	<legend class="toggletext"><a href="#validate_by_uri+with_options">추가 옵션</a></legend>
+	<div class="options">
+		
+        <!--#set var="fieldset_id" value="uri"-->
+        <!--#include virtual="detailed-form.html" -->  
+	</div>
+  </fieldset>
+
+
+	<p class="submit_button">
+			<input title="검사를 위한 확인" type="submit" value="검사" />
+	</p>
+	
+  </form>
+</fieldset>
+
+<fieldset id="validate-by-upload"  class="tabset_content front"><legend class="tabset_label">파일 업로드로 유효성 검사</legend>
+  <form method="post" enctype="multipart/form-data" action="check">
+    <p class="instructions">업로드한 문서의 유효성 검사:</p>
+    <p><label title="검사를 하기 위해 업로드할 로컬 파일 선택" for="uploaded_file">파일:</label>
+    <input type="file" id="uploaded_file" name="uploaded_file" size="45" /></p>        
+    <fieldset id="extra_opt_upload" class="moreoptions">
+			<legend class="toggletext"><a href="#validate_by_upload+with_options">추가 옵션</a></legend>
+			<div class="options">
+         <!--#set var="fieldset_id" value="upload"-->
+         <!--#include virtual="detailed-form.html" -->
+      </div>
+    </fieldset><!-- invisible -->
+
+	<p class="submit_button">
+		<input title="검사를 위한 확인" type="submit" value="검사" />
+	</p>
+		
+  </form>
+  <p class="xp"><strong>주의</strong>: Windows XP SP2 의 몇몇 IE 에서는 업로드가
+  되지 않을수도 있습니다. 이 경우에는, W3C QA 사이트의
+  <a href="http://www.w3.org/QA/2005/01/Validator-IE_WinXP_SP2">information page</a>
+  를 참고 하십시오.</p>
+
+</fieldset>
+
+<fieldset id="validate-by-input"  class="tabset_content front"><legend class="tabset_label">직접 입력하여 유효성 검사</legend>
+  <form method="post" enctype="multipart/form-data" action="check">
+    <p class="instructions"><label title="완전한 (HTML)문서를 여기에 붙여넣기 하십시오."
+       for="fragment">검사를 하기 위한 Markup을 입력:</label>:<br />
+                                  
+    <textarea id="fragment" name="fragment" rows="12" cols="80"></textarea>
+    <!--  <br /><label for="parsemodel">Treat as:</label>
+              <select id="parsemodel" name="parsemodel">
+                      <option value="sgml">HTML</option>
+                      <option value="xml">XML (and XHTML)</option>
+              </select> -->
+     </p>
+     <fieldset id="extra_opt_direct" class="moreoptions">
+         <legend class="toggletext"><a href="#validate_by_input+with_options">추가 옵션</a></legend>
+         <div class="options">
+                						
+             <table>
+             <!--#set var="fieldset_id" value="direct"-->
+             <!--#include virtual="detailed-form_directinput.html" -->  
+             </table>
+         </div>
+     </fieldset>
+                            
+
+     <p class="submit_button">
+		<input title="검사를 위한 확인" type="submit" value="검사" />
+     </p>
+
+
+  </form>
+</fieldset>
+</div><!-- fields -->
+</div> <!-- frontforms -->
+<!--#include virtual="intro.html" -->
+<!--#include virtual="footer.html" -->
+<!--#include virtual="kldp-changes.html" -->
+  </body>
+</html>

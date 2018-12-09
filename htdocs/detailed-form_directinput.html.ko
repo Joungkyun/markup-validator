@@ -1,0 +1,35 @@
+<tr><th colspan="3"><input id="<!--#echo var="fieldset_id" -->_prefill_no" name="prefill" type="radio" value="0" checked="checked" />
+  <label for="<!--#echo var="fieldset_id" -->_prefill_no">완전한 문서 유효성 검사</label></th></tr>
+
+<tr class="subchoice" id="choice_full">
+        <th class="subchoice_head"><label for="<!--#echo var="fieldset_id" -->-doctype">사용할 문서 형식:</label></th>
+        
+<td>            <!--#include virtual="doctype-select.html" --></td>
+<td>            <input id="<!--#echo var="fieldset_id" -->-fbd" name="fbd" type="checkbox" value="1" /><label for="<!--#echo var="fieldset_id" -->-fbd">문서 형식이 지정되어 있지 않을 경우에만 사용</label></td>
+</tr>
+<tr><th colspan="3"><input id="<!--#echo var="fieldset_id" -->_prefill_yes" name="prefill" type="radio" value="1" />
+  <label for="<!--#echo var="fieldset_id" -->_prefill_yes">HTML 부분에 대한 유효성 검사</label></th></tr>
+  <tr class="subchoice" id="choice_frag">
+    <th class="subchoice_head">사용할 문서 형식:</th>
+  <td colspan="2">
+    <input type="radio" name="prefill_doctype" id="<!--#echo var="fieldset_id" -->fill_doctype_html401" value="html401" checked="checked" /><label for="<!--#echo var="fieldset_id" -->fill_doctype_html401">HTML 4.01</label> 
+    <input type="radio" name="prefill_doctype" id="<!--#echo var="fieldset_id" -->fill_doctype_xhtml10" value="xhtml10" /><label for="<!--#echo var="fieldset_id" -->fill_doctype_xhtml10">XHTML 1.0</label></td></tr>
+  <tr>
+          <td colspan="3"><input type="radio" name="group" id="<!--#echo var="fieldset_id" -->group_no" value="0" checked="checked" /><label for="<!--#echo var="fieldset_id" -->group_no">연속된 메시지 리스트</label> <input type="radio" name="group" id="<!--#echo var="fieldset_id" -->group_yes" value="1" /><label for="<!--#echo var="fieldset_id" -->group_yes">타입별 에러 메시지 묶음</label></td>
+
+</tr>
+<tr>
+        <td><input id="<!--#echo var="fieldset_id" -->-ss" name="ss" type="checkbox" value="1" /><label title="페이지 소스 보기" for="<!--#echo var="fieldset_id" -->-ss">소스 보기</label></td>
+        <td colspan="2"><input id="<!--#echo var="fieldset_id" -->-st" name="st" type="checkbox" value="1" /><label for="<!--#echo var="fieldset_id" -->-st">HTML-Tidy 로 소스 수정</label>
+        </td>
+        
+
+
+          </tr>
+          <tr>
+                  <td><input id="<!--#echo var="fieldset_id" -->-outline" name="outline" type="checkbox" value="1" /><label title="문서의 개요 보기" for="<!--#echo var="fieldset_id" -->-outline">개요 보기</label>
+                  </td>
+                  <td><input id="<!--#echo var="fieldset_id" -->-No200" name="No200" type="checkbox" value="1" /><label title="에러를 나타내는 HTTP 상태 코드의 문서에 대한 유효성 검사" for="<!--#echo var="fieldset_id" -->-No200">에러 페이지 유효성 검사</label></td>
+
+                  <td><input id="<!--#echo var="fieldset_id" -->-verbose" name="verbose" type="checkbox" value="1" /><label title="자세한 결과" for="<!--#echo var="fieldset_id" -->-verbose">자세한 결과</label></td>
+        </tr>
