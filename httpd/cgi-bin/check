@@ -3401,6 +3401,7 @@ sub self_url_file
 sub redirect_html5_requests
 {
     return if not($CFG->{External}->{HTML5});
+    return if ($CFG->{External}->{HTML5} =~ /https?:\/\/localhost[:\/]/);
     if ($File->{'Direct Input'} || $File->{'Is Upload'}) {
         my $hash = $File->{'Direct Input'} ? "#textarea" : "#file";
         print redirect(
