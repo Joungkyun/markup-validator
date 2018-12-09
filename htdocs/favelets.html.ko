@@ -1,0 +1,77 @@
+<!--#set var="title" value="Favelets For The W3C Markup Validation Service"
+--><!--#set var="relroot" value="./"
+--><!--#include virtual="header.html" -->
+
+  <div class="doc">
+    <div><a id="skip" name="skip"></a>
+      <h2><a href="http://favelets.com/">Favelets</a>
+          For The Validator</h2>
+      <div class="intro">
+        <p>
+          <a href="http://favelets.com/">Favelet</a>은 브라우저의 책갈피가 다양한
+          고급 작업을 할 수 있도록 하는  책갈피
+          <acronym title="Universal Resource Identifier">URL</acronym>에 포함된
+          작은 자바 스크립트 스니핏 입니다.
+          인기있는 <a href="http://favelets.com/">Favelets</a>은 사용자에게
+          구문을 요청하고, 해당 구문을 웹을 검색 하거나
+          <a class="offsite" title="The Internet Archive WayBack Machine"
+           href="http://www.archive.org/">WayBack Machine</a> 에서
+          현재 표시된 버전의 이전 버전을 찾는 변형이 포함 됩니다.
+          &lt;<a href="http://favelets.com/">http://favelets.com/</a>&gt;에서
+          더 많은 Favelet을 찾을 수 있습니다.
+        </p>
+        <p>
+          <a href="http://favelets.com/">Favelets</a>은 브라우저 책갈피 기능 중
+          <code>javascript:</code> <acronym title="Universal Resource Identifiers">URL</acronym>
+          기능을 사용합니다. 그리고, 각 <a href="http://favelets.com/">Favelet</a>은
+          자바스크립트 사양의 특정 부분에 대한 지원이 제대로 동작하는지 여부에
+          달려 있습니다.
+          <acronym title="Microsoft Internet Explorer">MSIE</acronym> 5.0 이상 버전과
+          (Netscape 7.0과 같이 Mozilla 엔진을 이용하는 브라우저를 포함하는) 모질라 1.0 이상
+          버전에서는 대부분 <a href="http://favelets.com/">Favelets</a>이 잘 동작하는 것으로
+          알려져 있습니다.
+        </p>
+        <p>
+          자바스크립트 및 <acronym title="Document Object Model">DOM</acronym>을
+          지원하는 대부분의 브라우저는 기본 <a href="http://favelets.com/">Favelets</a>을
+          지원합니다. 하지만 고급 <a href="http://favelets.com/">Favelets</a>은 보다 완벽한
+          <acronym title="Document Object Model: Level 1">DOM1</acronym>과
+          <acronym title="Document Object Model: Level 2">DOM2</acronym> 지원이
+          필요할 수 있습니다.
+          Netscape 4.x는 관련된 기능이 없으며, 표준에 대한 열악한 지원으로
+          사용하지 않는 것을 권고 합니다.
+        </p>
+      </div>
+      <div>
+        <dl>
+          <dt>"<a href="javascript:void(window.location='https://validator.w3.org/check?uri='+encodeURIComponent(window.location))"
+                 title="Validate This Page">Validate <em>This</em> Page</a>"</dt>
+          <dd>
+            기본 "현재 문서 검사" <a href="http://favelets.com/">Favelet</a> 입니다.
+            단순하게 현재 보고 있는 문서의 URL을 검사기에 제출 합니다. 결과는 동일한
+            창에 표시 됩니다.
+          </dd>
+          <dt>"<a href="javascript:window.open('https://validator.w3.org/check?uri='+encodeURIComponent(window.location));void%200"
+                 title="Validate This Page In New Window">Validate <em>This</em> Page In New Window</a>"</dt>
+          <dd>
+            마지막 <a href="http://favelets.com/">Favelet</a> 처럼,
+            현재 페이지의 URL을 검사기에 제출 하며, 결과는 새창에 표시 됩니다.
+          </dd>
+          <dt>"<a href="javascript:void(q=prompt('Validate%20Page:',''));if(q)void(window.location='https://validator.w3.org/check?uri='+encodeURIComponent(q))"
+                 title="Validate Page...">Validate Page...</a>"</dt>
+          <dd>
+            검사를 하려는 문서의 URL을 입력하기 위한 텍스트 입력 필드
+            대화 상자를 표시 합니다. 결과는 현재 창에 나타납니다.
+          </dd>
+          <dt>"<a href="javascript:void(q=prompt('Validate%20Page:',''));if(q)window.open('https://validator.w3.org/check?uri='+encodeURIComponent(q));void%200"
+                 title="Validate Page In New Window...">Validate Page In New Window...</a>"</dt>
+          <dd>위와 동일하지만, 결과는 새 창에 표시 됩니다.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+<!--#include virtual="footer.html" -->
+  </body>
+</html>
+

@@ -1,0 +1,44 @@
+              <select id="<!--#echo var="fieldset_id" -->-charset" name="charset">
+                <option value="(detect automatically)" selected="selected">(자동 감지)</option>
+                <option value="utf-8">utf-8 (유니코드, worldwide)</option>
+                <option value="utf-16">utf-16 (유니코드, worldwide)</option>
+                <option value="iso-8859-1">iso-8859-1 (서유럽)</option>
+                <option value="iso-8859-2">iso-8859-2 (중앙유럽)</option>
+                <option value="iso-8859-3">iso-8859-3 (남유럽)</option>
+                <option value="iso-8859-4">iso-8859-4 (북유럽an)</option>
+                <option value="iso-8859-5">iso-8859-5 (키릴어)</option>
+                <option value="iso-8859-6-i">iso-8859-6-i (아라비아어)</option>
+                <option value="iso-8859-7">iso-8859-7 (그리스어)</option>
+                <option value="iso-8859-8">iso-8859-8 (히브리어, visual)</option>
+                <option value="iso-8859-8-i">iso-8859-8-i (히브리어, logical)</option>
+                <option value="iso-8859-9">iso-8859-9 (터키어)</option>
+                <option value="iso-8859-10">iso-8859-10 (라틴어 6)</option>
+                <option value="iso-8859-11">iso-8859-11 (라틴어/태국어)</option>
+                <option value="iso-8859-13">iso-8859-13 (라틴어 7, 발틱어)</option>
+                <option value="iso-8859-14">iso-8859-14 (라틴어 8, Celtic)</option>
+                <option value="iso-8859-15">iso-8859-15 (라틴어 9)</option>
+                <option value="iso-8859-16">iso-8859-16 (라틴어 10)</option>
+                <option value="us-ascii">us-ascii (기본 영어)</option>
+                <option value="euc-jp">euc-jp (일본어, Unix)</option>
+                <option value="shift_jis">shift_jis (일본어, Win/Mac)</option>
+                <option value="iso-2022-jp">iso-2022-jp (일본어, email)</option>
+                <option value="euc-kr">euc-kr (한국어)</option>
+                <option value="ksc_5601">ksc_5601 (한국어)</option>
+                <option value="gb2312">gb2312 (중국어, 간체)</option>
+                <option value="gb18030">gb18030 (중국어, 간체)</option>
+                <option value="big5">big5 (중국어, 번체)</option>
+                <option value="big5-HKSCS">Big5-HKSCS (중국어, 홍콩)</option>
+                <option value="tis-620">tis-620 (태국어)</option>
+                <option value="koi8-r">koi8-r (러시아어)</option>
+                <option value="koi8-u">koi8-u (우크라이나어)</option>
+                <option value="iso-ir-111">iso-ir-111 (키릴어 KOI-8)</option>
+                <option value="macintosh">macintosh (MacRoman)</option>
+                <option value="windows-1250">windows-1250 (Central 유럽)</option>
+                <option value="windows-1251">windows-1251 (키릴어)</option>
+                <option value="windows-1252">windows-1252 (Western 유럽)</option>
+                <option value="windows-1253">windows-1253 (그리스어)</option>
+                <option value="windows-1254">windows-1254 (터키어)</option>
+                <option value="windows-1255">windows-1255 (히브리어)</option>
+                <option value="windows-1256">windows-1256 (아라비아어)</option>
+                <option value="windows-1257">windows-1257 (발틱어)</option>
+              </select>

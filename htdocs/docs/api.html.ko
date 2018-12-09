@@ -1,0 +1,16 @@
+<!--#set var="title" value="Documentation of the Programmatic Interface (API) to The W3C Markup Validation Service"
+--><!--#set var="relroot" value="../"
+--><!--#include virtual="../header.html" -->
+
+<div class="doc">
+<h2>Markup Validator Web Service API</h2>
+<!--#include virtual="../htmlchecker_api.html" -->
+<p>
+  (더 이상 사용하지 않는)
+  <a href="obsolete-api.html">폐기된 Markup 검사기용 SOAP 1.2 API</a>에 대한 예전
+  문서도 있습니다.
+</p>
+</div>
+<!--#include virtual="../footer.html" -->
+  </body>
+</html>

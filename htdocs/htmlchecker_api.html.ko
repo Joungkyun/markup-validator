@@ -1,0 +1,18 @@
+    <p>
+      최신 HTML 문서를 프로그래밍 방식으로 검사하려면,
+      <a href="https://validator.w3.org/nu/">W3C HTML 검사기</a>에서 제공하는
+      API를 사용 하십시오. API 사용은
+      <a href="https://validator.w3.org/nu/">https://validator.w3.org/nu/</a>
+      또는 W3C HTML 검사기의 다른 인스턴스에 대한 URL을 호출하면 됩니다.
+      호출 방법에 대해서는 다음 문서들을 참고 하십시오:
+    </p>
+
+    <img src="/images/HTML5_Badge_128.png" alt="HTML5" class="html5_logo_128">
+    <ul style="list-style-type: none">
+      <li style="list-style-type: none"><a href="https://github.com/validator/validator/wiki/Service-»-Input-»-GET">W3C HTML 검사기 GET interface</a></li>
+      <li style="list-style-type: none"><a href="https://github.com/validator/validator/wiki/Service-»-Input-»-POST-body">W3C HTML 검사기 POST interface</a></li>
+      <li style="list-style-type: none"><a href="https://github.com/validator/validator/wiki/Service-»-Common-params">W3C HTML 검사기 parameters</a></li>
+      <li style="list-style-type: none"><a href="https://github.com/validator/validator/wiki/Output-»-JSON">W3C HTML 검사기 out=json format</a></li>
+      <li style="list-style-type: none"><a href="https://github.com/validator/validator/wiki/Output-»-XML">W3C HTML 검사기 out=xml format</a></li>
+      <li style="list-style-type: none"><a href="https://github.com/validator/validator/wiki/Output-»-GNU">W3C HTML 검사기 out=gnu format</a></li>
+    </ul>

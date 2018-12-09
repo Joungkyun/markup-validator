@@ -1,0 +1,17 @@
+  <p>
+    W3C Markup 검사기는 다양한 문서 형식의 Perl/CGI/SGML/XML/DTD-기반
+    검사를 제공 합니다.
+    SGML과 DTD는 웹에서 널리 사용되지 않는 오래된 기술이기 때문에,
+    최신 기술을 사용하는 HTML 문서를 검사하기 위해서는 기존의 W3C Markup
+    검사기 대신
+    <a href="https://validator.w3.org/nu/">W3C HTML 검사기</a>를
+    사용하는 것이 좋습니다.
+    W3C HTML 검사기를 사용하기 위해서 다음을 참조 하십시오:
+  </p>
+  <img src="../images/HTML5_Badge_32.png" alt="HTML5" class="html5_logo_32">
+  <ul>
+    <li>
+      <a href="https://github.com/validator/validator/releases/latest">최신 배포 버전</a> 다운로드</li>
+    <li>W3C HTML 검사기
+      <a href="http://validator.github.io/validator/">사용 설명서</a>를 읽으십시오.</li>
+  </ul>
