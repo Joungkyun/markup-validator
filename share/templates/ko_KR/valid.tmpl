@@ -48,10 +48,12 @@
     </TMPL_IF>
 </TMPL_IF>
     파서는 다음의 기술을 기반으로 검사를 하도록 구현 되었습니다:<br />
+    <div style="margin: 10px 10px 10px 50px; border-left: 10px solid #cdcdcd; padding-left: 10px;">
     <TMPL_LOOP NAME="parsers">
     <TMPL_UNLESS NAME="__first__"><TMPL_IF NAME="__last__">and </TMPL_IF></TMPL_UNLESS>
     <a href="<TMPL_VAR NAME="link" ESCAPE="HTML">"><TMPL_VAR NAME="name" ESCAPE="HTML"></a><TMPL_IF NAME="type"> (<TMPL_VAR NAME="type" ESCAPE="HTML">)</TMPL_IF><TMPL_IF NAME="__inner__">,</TMPL_IF><TMPL_IF NAME="__last__">.</TMPL_IF>
     </TMPL_LOOP>
+    </div>
   </p>
 <TMPL_IF NAME="badge_uri">
 <h4>당신의 웹 페이지에 "valid" Icon을 달수 있습니다.</h4>

@@ -640,6 +640,13 @@ elsif (($File->{DOCTYPE} eq "HTML5") or ($File->{DOCTYPE} eq "XHTML5")
         or ($File->{DOCTYPE} eq '')) {
     if ($CFG->{External}->{HTML5}) {
         $File = &html5_validate($File);
+        &add_warning(
+            'W00',
+            {
+                W00_experimental_name => "HTML5 Conformance Checker",
+                W00_experimental_URI  => "feedback.html"
+            }
+        );
     }
     else {
         $File->{'Error Flagged'} = TRUE;
@@ -1604,9 +1611,9 @@ sub fin_template ($$)
     }
     my ($num_errors, $num_warnings, $num_info, $reported_errors) =
         &report_errors($File);
-    if ($File->{Version} eq "HTML5") {
-        $num_warnings++;
-    }
+    #if ($File->{Version} eq "HTML5") {
+    #    $num_warnings++;
+    #}
     if ($num_errors + $num_warnings > 0) {
         $T->param(has_errors => 1);
     }
