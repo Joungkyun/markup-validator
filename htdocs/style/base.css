@@ -53,7 +53,7 @@ a img {
 
 a:link,
 a:visited {
-	text-decoration: underline;
+	text-decoration: none;
 	color: #365d95;
 }
 
